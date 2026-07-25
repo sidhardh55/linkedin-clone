@@ -1,0 +1,193 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #191919;
+  margin-bottom: 1.5rem;
+}
+
+.tabsRow {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #666666;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  color: #191919;
+}
+
+.activeTab {
+  color: #0a66c2;
+  border-bottom-color: #0a66c2;
+}
+
+.badge {
+  background-color: #c5221f;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  margin-left: 6px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.userCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.userCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #0a66c2;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #191919;
+}
+
+.username {
+  font-size: 0.85rem;
+  color: #666666;
+  margin-bottom: 0.25rem;
+}
+
+.email {
+  font-size: 0.8rem;
+  color: #888888;
+  margin-bottom: 1rem;
+}
+
+.actionsRow {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.acceptBtn {
+  flex: 1;
+  padding: 0.6rem;
+  background-color: #0a66c2;
+  color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.acceptBtn:hover {
+  background-color: #004182;
+}
+
+.rejectBtn {
+  flex: 1;
+  padding: 0.6rem;
+  background-color: transparent;
+  color: #666666;
+  border: 1px solid #cccccc;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rejectBtn:hover {
+  background-color: #f3f2ef;
+}
+
+.statusBadge {
+  padding: 0.4rem 1rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.statusAccepted {
+  background-color: #e6f4ea;
+  color: #137333;
+}
+
+.statusPending {
+  background-color: #fef7e0;
+  color: #b06000;
+}
+
+.statusRejected {
+  background-color: #fce8e6;
+  color: #c5221f;
+}
+
+.messageBtn {
+  margin-top: 0.75rem;
+  width: 100%;
+  padding: 0.6rem;
+  background-color: transparent;
+  color: #0a66c2;
+  border: 1.5px solid #0a66c2;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.messageBtn:hover {
+  background-color: #e8f2fe;
+}
+
+.emptyState {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: #666666;
+}

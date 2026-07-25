@@ -1,0 +1,135 @@
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.25rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #0a66c2;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  object-fit: cover;
+}
+
+.authorMeta {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #191919;
+}
+
+.postTime {
+  font-size: 0.785rem;
+  color: #777777;
+}
+
+.deleteBtn {
+  color: #c5221f;
+  background: #fce8e6;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deleteBtn:hover {
+  background-color: #fad2cf;
+}
+
+.postBody {
+  font-size: 0.95rem;
+  color: #191919;
+  line-height: 1.5;
+  white-space: pre-line;
+  margin-bottom: 0.85rem;
+}
+
+.mediaContainer {
+  margin: 0.85rem -1.25rem 0.85rem -1.25rem;
+  background-color: #000000;
+  max-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.postMedia {
+  max-width: 100%;
+  max-height: 450px;
+  object-fit: contain;
+}
+
+.statsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.825rem;
+  color: #666666;
+}
+
+.likeCount {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.actionsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 0.5rem;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: #666666;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionBtn:hover {
+  background-color: #f3f2ef;
+  color: #191919;
+}
+
+.actionBtnActive {
+  color: #0a66c2;
+}

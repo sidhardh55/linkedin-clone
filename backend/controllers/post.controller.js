@@ -1,5 +1,6 @@
 import User from "../models/user.model.js";
 import Post from "../models/posts.model.js";
+import Comment from "../models/comments.model.js";
 
 export const activeCheck = async (req, res) => {
     return res.status(200).json({ message: "RUNNING" });
@@ -39,7 +40,7 @@ export const createPost = async (req, res) => {
 export const getAllPosts = async (req,res) =>{
     try {
 
-        const posts =await Post.find().populate('userId','name username email profilePicture')
+        const posts =await Post.find().sort({ createdAt: -1 }).populate('userId','name username email profilePicture')
         return res.json({ posts })
 
     }catch(err){
@@ -59,7 +60,7 @@ export const deletePost = async (req,res) =>{
             return res.status(404).json({messege:"User not found"});
         }
 
-        const post = await Post.find({_id:post_id});
+        const post = await Post.findOne({_id:post_id});
 
         if(!post){
             return res.status(404).json({messege:"Post not found"});
@@ -101,7 +102,7 @@ export const commentPost = async (req,res) =>{
         const comment = new Comment({
             userId : user._id,
             postId:post_id,
-            comment:commentBody
+            body:commentBody
         });
 
         await comment.save();
@@ -109,13 +110,13 @@ export const commentPost = async (req,res) =>{
         return res.status(200).json({messege:"Comment Added"});
 
     }catch(err){
-        res.status(500).json({messege:err.messege});
+        res.status(500).json({messege:err.message});
     }
 }
 
 
 export const get_comments_by_post = async(req,res) =>{
-    const {post_id} = req.body;
+    const post_id = req.query.post_id || req.body?.post_id;
 
     try{
         const post = await Post.findOne({_id:post_id});
@@ -124,11 +125,13 @@ export const get_comments_by_post = async(req,res) =>{
             return res.status(404).json({messege: "Post not found "});
         }
 
-        return res.json({comments:post.comments})
+        const comments = await Comment.find({ postId: post_id }).populate('userId', 'name username profilePicture');
+
+        return res.json({comments})
 
     }catch(err){
         
-        return res.status(500).json({messege:err.messeg});
+        return res.status(500).json({messege:err.message});
 
     }
 }
@@ -146,7 +149,7 @@ export const delete_comment_of_user = async(req,res)=>{
         const comment =  await Comment.findOne({_id:comment_id})
 
         if(!comment){
-            res.status(404).json({messeg :"Comment not found "});
+            return res.status(404).json({messege :"Comment not found "});
         }
 
         if(comment.userId.toString() !== user._id.toString()){
@@ -155,10 +158,10 @@ export const delete_comment_of_user = async(req,res)=>{
     
         await Comment.deleteOne({"_id":comment_id});
 
-        return res.json({messeg:"Comment Deleted"});
+        return res.json({messege:"Comment Deleted"});
 
     }catch(err){
-        return res.status(500).json({messege:err.messege});
+        return res.status(500).json({messege:err.message});
     }
 }
 
@@ -181,6 +184,6 @@ export const increment_likes = async(req,res)=>{
         return res.json({messege:"Likes Incremented"});
 
     }catch(err){
-        res.status(500).json({messege:err.messege});
+        res.status(500).json({messege:err.message});
     }
 }

@@ -1,24 +1,165 @@
-.conatiner{
-    padding:1.2rem;
+.container {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
-.navBar{
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
+.navBar {
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 54px;
 }
 
-.navBarOptionContainer{
-    display:flex;
-
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0a66c2;
+  cursor: pointer;
+  letter-spacing: -0.5px;
 }
 
-.buttonJoin{
-    background: #CD8987;
-    border-radius: 10px;
-    padding: 0.6rem;
-    color: white;
-    font-size: 0.7rem;
-    cursor: pointer;
-    font-weight: bold;
+.brandIcon {
+  background: #0a66c2;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #666666;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 4px 8px;
+}
+
+.navItem:hover, .navItemActive {
+  color: #191919;
+}
+
+.navItemActive::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #191919;
+}
+
+.navIcon {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 2px;
+}
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 1px solid #e0e0e0;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #0a66c2;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.logoutBtn {
+  font-size: 0.8rem;
+  color: #c5221f;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: #fce8e6;
+  transition: all 0.2s ease;
+}
+
+.logoutBtn:hover {
+  background: #fad2cf;
+}
+
+.joinBtn {
+  background-color: #0a66c2;
+  color: white;
+  border-radius: 20px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.joinBtn:hover {
+  background-color: #004182;
+}
+
+.iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notifBadge {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  background-color: #c5221f;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.avatarClickable {
+  cursor: pointer;
+  border-radius: 50%;
+  transition: opacity 0.15s ease;
+}
+
+.avatarClickable:hover {
+  opacity: 0.85;
 }

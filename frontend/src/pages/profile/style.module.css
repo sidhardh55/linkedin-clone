@@ -1,0 +1,355 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.profileCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.coverBanner {
+  height: 160px;
+  background: linear-gradient(135deg, #0a66c2 0%, #004182 100%);
+  position: relative;
+}
+
+.headerContent {
+  padding: 0 2rem 2rem;
+  margin-top: -60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.avatarGroup {
+  position: relative;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  background-color: #0a66c2;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+.avatarEditBadge {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background-color: #ffffff;
+  color: #0a66c2;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.avatarEditBadge:hover {
+  background-color: #e8f2fe;
+  transform: scale(1.05);
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.actionBtns {
+  display: flex;
+  gap: 1rem;
+}
+
+.resumeBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #0a66c2;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.resumeBtn:hover {
+  background-color: #004182;
+}
+
+.editToggleBtn {
+  background-color: transparent;
+  color: #0a66c2;
+  border: 1.5px solid #0a66c2;
+  padding: 0.65rem 1.4rem;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.editToggleBtn:hover {
+  background-color: #e8f2fe;
+}
+
+.infoSection {
+  padding: 1.5rem 2rem 2rem;
+}
+
+.name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #191919;
+}
+
+.headline {
+  font-size: 1.1rem;
+  color: #0a66c2;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.metaText {
+  font-size: 0.9rem;
+  color: #666666;
+  margin-top: 0.25rem;
+}
+
+.bio {
+  font-size: 0.95rem;
+  color: #333333;
+  margin-top: 1rem;
+  line-height: 1.6;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #0a66c2;
+}
+
+.sectionCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #191919;
+}
+
+.addBtn {
+  color: #0a66c2;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 4px 12px;
+  border-radius: 16px;
+  background: #e8f2fe;
+}
+
+.addBtn:hover {
+  background-color: #0a66c2;
+  color: white;
+}
+
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.itemCard {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  border: 1px solid #eeeeee;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.itemTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #191919;
+}
+
+.itemSubtitle {
+  font-size: 0.9rem;
+  color: #0a66c2;
+  font-weight: 600;
+}
+
+.itemMeta {
+  font-size: 0.85rem;
+  color: #777777;
+  margin-top: 0.25rem;
+}
+
+.deleteItemBtn {
+  color: #c5221f;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.deleteItemBtn:hover {
+  background: #fce8e6;
+}
+
+.formBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #f9f9f9;
+  padding: 1.25rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  margin-top: 1rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333333;
+}
+
+.input {
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #0a66c2;
+}
+
+.saveBtn {
+  align-self: flex-end;
+  padding: 0.65rem 1.5rem;
+  background-color: #0a66c2;
+  color: white;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.saveBtn:hover {
+  background-color: #004182;
+}
+
+.connectBtn {
+  background-color: #0a66c2;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.connectBtn:hover {
+  background-color: #004182;
+}
+
+.messageBtn {
+  background-color: transparent;
+  color: #0a66c2;
+  border: 1.5px solid #0a66c2;
+  padding: 0.65rem 1.4rem;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.messageBtn:hover {
+  background-color: #e8f2fe;
+}
+
+.pendingBtn {
+  background-color: #f3f2ef;
+  color: #666666;
+  padding: 0.7rem 1.4rem;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: not-allowed;
+}
+
+.backBtn {
+  background: transparent;
+  color: #0a66c2;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.backBtn:hover {
+  text-decoration: underline;
+}
+
+.toast {
+  background: #e8f2fe;
+  color: #0a66c2;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem;
+  color: #666666;
+}
