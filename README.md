@@ -1,91 +1,100 @@
-# 🚀 ProConnect - Professional Networking Platform
+# 🚀 LinkedIn Clone - Professional Networking Platform
 
 ## 📖 Project Overview
 
-**ProConnect** is a full-stack professional networking platform inspired by LinkedIn, built using **Next.js**, **Node.js**, **Express.js**, and **MongoDB**. The platform enables users to build professional profiles, connect with other professionals, share posts, and engage with their network through likes, comments, and follow functionality.
+**LinkedIn Clone** is a full-stack professional networking platform built using **Next.js**, **Node.js**, **Express.js**, and **MongoDB**. The application allows users to build professional profiles, create and interact with posts, connect with professionals, exchange messages, and manage their network through a clean and responsive interface.
 
-The backend follows the **MVC (Model-View-Controller)** architecture to ensure clean code organization, scalability, and maintainability. This project demonstrates industry-standard full-stack development concepts including authentication, RESTful API development, database integration, state management, image uploads, and responsive UI design.
+The backend follows the **MVC (Model-View-Controller)** architecture, making the application scalable, maintainable, and easy to extend. The project demonstrates modern full-stack development concepts including authentication, RESTful APIs, Redux state management, image uploads, and database integration.
 
 ---
 
 # ✨ Project Highlights
 
-* ✅ Full-Stack Next.js Application
-* ✅ MVC (Model-View-Controller) Backend Architecture
-* ✅ Secure JWT Authentication
-* ✅ Cookie-Based Authentication
-* ✅ MongoDB Atlas Database Integration
-* ✅ RESTful API Architecture
-* ✅ Cloudinary Image Storage
-* ✅ Redux Toolkit State Management
-* ✅ Responsive User Interface
-* ✅ Complete CRUD Functionality
-* ✅ Modern & Scalable Project Structure
+- ✅ Full-Stack Next.js Application
+- ✅ MVC Backend Architecture
+- ✅ MongoDB Database Integration
+- ✅ JWT Authentication
+- ✅ Secure Password Hashing
+- ✅ Redux Toolkit State Management
+- ✅ RESTful API Design
+- ✅ Profile Picture Upload
+- ✅ Professional Networking Features
+- ✅ Messaging System
+- ✅ PDF Resume/Profile Export
+- ✅ Responsive User Interface
+- ✅ Complete CRUD Operations
 
 ---
 
 # 🚀 Features
 
-## 🔐 User Authentication
+## 🔐 Authentication
 
-* User Registration
-* User Login
-* Secure JWT Authentication
-* Password Encryption using bcrypt
-* Protected Routes
-* Cookie-Based Authentication
-* Secure User Sessions
-* User Logout
+- User Registration
+- User Login
+- JWT Authentication
+- Password Encryption (bcrypt)
+- Secure User Sessions
+- Logout Functionality
 
 ---
 
-## 👤 Profile Management
+## 👤 User Profile
 
-* Create Professional Profile
-* Edit Profile Information
-* Upload Profile Picture
-* Upload Cover Photo
-* Update Bio
-* Add Skills
-* Add Education
-* Add Work Experience
+- Create Professional Profile
+- Update Personal Information
+- Upload Profile Picture
+- View Other User Profiles
+- Download Profile as PDF
+- Edit Skills & Profile Details
 
 ---
 
-## 🌐 Social Features
+## 🌐 Social Networking
 
-* Create Posts
-* Delete Posts
-* View Home Feed
-* Like & Unlike Posts
-* Comment on Posts
-* Follow Users
-* Unfollow Users
-* Suggested Connections
-* View User Profiles
+- Create Posts
+- Delete Posts
+- View Feed
+- Like Posts
+- Comment on Posts
+- Delete Own Comments
+- Send Connection Requests
+- Accept Connection Requests
+- View Connections
+- Discover Professionals
+
+---
+
+## 💬 Messaging
+
+- One-to-One Messaging
+- View Conversations
+- Chat User List
+- Real-Time Ready Backend Structure
 
 ---
 
 ## 🎨 User Experience
 
-* Responsive Design
-* Modern UI
-* Mobile-Friendly Layout
-* Fast Performance
-* Loading Indicators
-* Error Handling
-* Smooth Navigation
+- Responsive Design
+- Modern UI
+- Mobile Friendly
+- Fast Navigation
+- Loading States
+- Error Handling
 
 ---
 
-## 🗄️ Database Integration
+# 🗄️ Database
 
-* MongoDB Atlas Cloud Database
-* Secure User Data Storage
-* User Profiles
-* Posts Management
-* Comments Management
-* User Connections
+MongoDB stores:
+
+- Users
+- Profiles
+- Posts
+- Comments
+- Connections
+- Messages
 
 ---
 
@@ -93,103 +102,114 @@ The backend follows the **MVC (Model-View-Controller)** architecture to ensure c
 
 ## 💻 Frontend
 
-* Next.js
-* React.js
-* Redux Toolkit
-* Tailwind CSS
-* Axios
-
-### ⚙️ Backend
-
-* Node.js
-* Express.js
-
-### 🗃️ Database
-
-* MongoDB Atlas
-* Mongoose
-
-### 🔑 Authentication
-
-* JSON Web Tokens (JWT)
-* bcryptjs
-* Cookie Parser
-
-### ☁️ Cloud Services
-
-* Cloudinary
+- Next.js
+- React.js
+- Redux Toolkit
+- Axios
+- CSS
 
 ---
 
-# 🏗️ Project Architecture
+## ⚙️ Backend
+
+- Node.js
+- Express.js
+- MVC Architecture
+
+---
+
+## 🗃️ Database
+
+- MongoDB
+- Mongoose
+
+---
+
+## 🔐 Authentication
+
+- JWT (JSON Web Tokens)
+- bcrypt
+
+---
+
+## 📂 File Uploads
+
+- Multer
+
+---
+
+## 📄 PDF Generation
+
+- PDFKit
+- pdf-creator-node
+
+---
+
+# 🏗️ Project Structure
 
 ```text
-ProConnect
+LinkedinClone
 │
-├── client (Next.js Frontend)
-│   ├── app
-│   ├── components
-│   ├── redux
-│   ├── hooks
-│   ├── services
-│   ├── utils
-│   └── assets
+├── frontend
+│   ├── src
+│   │   ├── app
+│   │   ├── components
+│   │   ├── redux
+│   │   ├── services
+│   │   ├── hooks
+│   │   └── utils
+│   └── public
 │
-├── server (MVC Architecture)
+├── backend
 │   ├── config
 │   ├── controllers
 │   ├── middleware
 │   ├── models
 │   ├── routes
+│   ├── uploads
+│   ├── seed
 │   ├── utils
 │   └── server.js
 │
-├── MongoDB Atlas
-│   ├── Users Collection
-│   ├── Posts Collection
-│   └── Comments Collection
-│
-└── Cloudinary
-    └── Media Storage
+└── README.md
 ```
 
 ---
 
-# ⚙️ Installation Guide
+# ⚙️ Installation
 
 ## 📋 Prerequisites
 
-* Node.js
-* npm
-* MongoDB Atlas Account
-* Cloudinary Account
-* Git
+- Node.js
+- npm
+- MongoDB Atlas (or Local MongoDB)
+- Git
 
 ---
 
 ## 📥 Clone Repository
 
 ```bash
-git clone https://github.com/Sidhardh55/proconnect.git
+git clone https://github.com/Sidhardh55/LinkedinClone.git
 
-cd proconnect
+cd LinkedinClone
 ```
 
 ---
 
-## 📦 Install Backend Dependencies
+## 📦 Install Backend
 
 ```bash
-cd server
+cd backend
 npm install
 ```
 
 ---
 
-## 📦 Install Frontend Dependencies
+## 📦 Install Frontend
 
 ```bash
-cd ../client
+cd ../frontend
 npm install
 ```
 
@@ -197,22 +217,16 @@ npm install
 
 # 🔐 Environment Variables
 
-Create a `.env` file inside the **server** directory.
+Create a `.env` file inside the **backend** folder.
 
 ```env
-PORT=5000
+PORT=8080
 
 MONGO_URI=your_mongodb_connection_string
 
-JWT_SECRET=your_jwt_secret
+JWT_SECRET=your_secret_key
 
 CLIENT_URL=http://localhost:3000
-
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-
-CLOUDINARY_API_KEY=your_api_key
-
-CLOUDINARY_API_SECRET=your_api_secret
 ```
 
 ---
@@ -220,14 +234,14 @@ CLOUDINARY_API_SECRET=your_api_secret
 # ▶️ Run Backend
 
 ```bash
-cd server
+cd backend
 npm run dev
 ```
 
-Backend runs on:
+Backend:
 
-```text
-http://localhost:5000
+```
+http://localhost:8080
 ```
 
 ---
@@ -235,46 +249,52 @@ http://localhost:5000
 # ▶️ Run Frontend
 
 ```bash
-cd client
+cd frontend
 npm run dev
 ```
 
-Frontend runs on:
+Frontend:
 
-```text
+```
 http://localhost:3000
 ```
 
 ---
 
-# 🔌 API Endpoints
+# 🔌 API Modules
 
-## 🔐 Authentication
+## 👤 User
 
-| Method | Endpoint             | Description             |
-| ------ | -------------------- | ----------------------- |
-| POST   | `/api/auth/register` | Register a new user     |
-| POST   | `/api/auth/login`    | Login an existing user  |
-| POST   | `/api/auth/logout`   | Logout the current user |
+- Register User
+- Login User
+- Update Profile
+- Upload Profile Picture
+- Get User Profile
+- Get All Users
+- Download Profile PDF
+- Send Connection Request
+- Accept Connection Request
+- View Connections
 
-### 👤 Users
+---
 
-| Method | Endpoint                  | Description                |
-| ------ | ------------------------- | -------------------------- |
-| GET    | `/api/users/profile`      | Get logged-in user profile |
-| PUT    | `/api/users/profile`      | Update user profile        |
-| POST   | `/api/users/follow/:id`   | Follow a user              |
-| DELETE | `/api/users/unfollow/:id` | Unfollow a user            |
+## 📝 Posts
 
-### 📝 Posts
+- Create Post
+- Get All Posts
+- Delete Post
+- Like / Unlike Post
+- Add Comment
+- Delete Comment
+- Get Comments
 
-| Method | Endpoint                 | Description             |
-| ------ | ------------------------ | ----------------------- |
-| GET    | `/api/posts`             | Fetch all posts         |
-| POST   | `/api/posts`             | Create a new post       |
-| DELETE | `/api/posts/:id`         | Delete a post           |
-| PUT    | `/api/posts/like/:id`    | Like or Unlike a post   |
-| POST   | `/api/posts/comment/:id` | Add a comment to a post |
+---
+
+## 💬 Messages
+
+- Send Message
+- Get Conversation
+- Get Chat Users
 
 ---
 
@@ -282,34 +302,35 @@ http://localhost:3000
 
 This project helped in understanding:
 
-* Full-Stack Web Development
-* Next.js Application Development
-* MVC Architecture
-* REST API Development
-* MongoDB Database Integration
-* Authentication & Authorization
-* Redux Toolkit State Management
-* Cloudinary Image Uploads
-* Git & GitHub Workflow
-* Frontend-Backend Communication
-* CRUD Operations
-* Secure Session Management
-* Scalable Project Architecture
+- Full-Stack Web Development
+- Next.js Development
+- Express.js Backend Development
+- MVC Architecture
+- MongoDB Integration
+- REST API Development
+- Authentication & Authorization
+- Redux Toolkit
+- CRUD Operations
+- Image Upload Handling
+- PDF Generation
+- Frontend & Backend Communication
+- Git & GitHub Workflow
+- Scalable Project Structure
 
 ---
 
 # 🚀 Future Enhancements
 
-* 💬 Real-Time Chat
-* 🔔 Real-Time Notifications
-* ♾️ Infinite Scrolling Feed
-* 🔍 Search Users & Posts
-* 💼 Job Posting & Applications
-* 🔖 Bookmark Posts
-* 🌙 Dark Mode
-* 📧 Email Verification
-* 🔒 Password Reset
-* ⚡ WebSocket-Based Live Updates
+- 🔔 Real-Time Notifications
+- 💬 WebSocket Chat
+- 🔍 User Search
+- ♾️ Infinite Feed
+- 👍 Post Sharing
+- 📧 Email Verification
+- 🔒 Forgot Password
+- 🌙 Dark Mode
+- 📱 Progressive Web App (PWA)
+- ☁️ Cloud Image Storage
 
 ---
 
@@ -317,12 +338,20 @@ This project helped in understanding:
 
 **Manchukonda Sidhardha**
 
-GitHub: https://github.com/sidhardh55
+📧 Email: sidhumanchukonda@gmail.com
+
+GitHub: https://github.com/Sidhardh55
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a **⭐ Star** on GitHub!
 
 ---
 
 # 📄 License
 
-This project is developed for educational, learning, and portfolio purposes.
+This project is developed for educational and portfolio purposes.
 
 © 2026 Manchukonda Sidhardha
