@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import UserLayout from '@/layout/UserLayout';
 import styles from './style.module.css';
@@ -18,7 +18,7 @@ export default function ConnectionsPage() {
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     const token = localStorage.getItem("token");
     if (!token) {
       router.push("/login");
@@ -43,11 +43,15 @@ export default function ConnectionsPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [router]);
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    const timer = window.setTimeout(() => {
+      fetchData();
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [fetchData]);
 
   // Handle Accept or Reject
   const handleRespondRequest = async (requestId, actionType) => {
@@ -201,7 +205,7 @@ export default function ConnectionsPage() {
               uniqueConnections.length === 0 ? (
                 <div className={styles.emptyState}>
                   <h3>You have no active connections yet</h3>
-                  <p style={{ marginTop: '0.5rem' }}>Switch to the "Discover People" tab to start growing your professional network!</p>
+                  <p style={{ marginTop: '0.5rem' }}>Switch to the &quot;Discover People&quot; tab to start growing your professional network!</p>
                 </div>
               ) : (
                 <div className={styles.cardGrid}>

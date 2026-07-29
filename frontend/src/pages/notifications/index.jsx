@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import UserLayout from '@/layout/UserLayout';
 import styles from './style.module.css';
@@ -11,7 +11,7 @@ export default function NotificationsPage() {
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
 
-  const fetchNotifications = async () => {
+  const fetchNotifications = useCallback(async () => {
     const token = localStorage.getItem("token");
     if (!token) {
       router.push("/login");
@@ -28,11 +28,15 @@ export default function NotificationsPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [router]);
 
   useEffect(() => {
-    fetchNotifications();
-  }, []);
+    const timer = window.setTimeout(() => {
+      fetchNotifications();
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [fetchNotifications]);
 
   const handleAction = async (requestId, actionType) => {
     const token = localStorage.getItem("token");

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import UserLayout from '@/layout/UserLayout';
 import styles from './style.module.css';
@@ -21,7 +21,7 @@ export default function MessagesPage() {
   const baseURL = "http://localhost:8080/";
 
   // 1. Fetch available chat users
-  const fetchUsers = async () => {
+  const fetchUsers = useCallback(async () => {
     const token = localStorage.getItem("token");
     if (!token) {
       router.push("/login");
@@ -53,14 +53,18 @@ export default function MessagesPage() {
     } finally {
       setLoadingUsers(false);
     }
-  };
+  }, [currentUser, router, selectedUser]);
 
   useEffect(() => {
-    fetchUsers();
-  }, [currentUser]);
+    const timer = window.setTimeout(() => {
+      fetchUsers();
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [fetchUsers]);
 
   // 2. Fetch conversation for selectedUser
-  const fetchConversation = async (targetUser) => {
+  const fetchConversation = useCallback(async (targetUser) => {
     if (!targetUser?._id) return;
     const token = localStorage.getItem("token");
     if (!token) return;
@@ -71,19 +75,25 @@ export default function MessagesPage() {
     } catch (err) {
       console.error("Error fetching messages:", err);
     }
-  };
+  }, []);
 
   // Poll conversation every 3 seconds for active selectedUser
   useEffect(() => {
     if (!selectedUser) return;
-    fetchConversation(selectedUser);
+
+    const timer = window.setTimeout(() => {
+      fetchConversation(selectedUser);
+    }, 0);
 
     const interval = setInterval(() => {
       fetchConversation(selectedUser);
     }, 3000);
 
-    return () => clearInterval(interval);
-  }, [selectedUser]);
+    return () => {
+      window.clearTimeout(timer);
+      clearInterval(interval);
+    };
+  }, [fetchConversation, selectedUser]);
 
   // Auto-scroll to bottom of messages
   useEffect(() => {

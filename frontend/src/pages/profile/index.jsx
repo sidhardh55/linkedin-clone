@@ -48,11 +48,15 @@ export default function ProfilePage() {
   }, [dispatch, router]);
 
   useEffect(() => {
-    if (user.name) setName(user.name);
-    if (user.username) setUsername(user.username);
-    if (profile.currentPost) setCurrentPost(profile.currentPost);
-    if (profile.bio) setBio(profile.bio);
-  }, [profile]);
+    const timer = window.setTimeout(() => {
+      if (user.name) setName(user.name);
+      if (user.username) setUsername(user.username);
+      if (profile.currentPost) setCurrentPost(profile.currentPost);
+      if (profile.bio) setBio(profile.bio);
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [profile, user.name, user.username, profile.currentPost, profile.bio]);
 
   // Handle Profile Picture Upload
   const handleAvatarChange = async (e) => {
@@ -229,7 +233,7 @@ export default function ProfilePage() {
                 <p className={styles.bio}>{profile.bio}</p>
               ) : (
                 <p className={styles.metaText} style={{ marginTop: '1rem', italic: 'true' }}>
-                  No bio added yet. Click "Edit Profile" to add your bio.
+                  No bio added yet. Click &quot;Edit Profile&quot; to add your bio.
                 </p>
               )}
             </div>

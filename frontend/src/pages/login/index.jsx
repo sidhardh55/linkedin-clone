@@ -24,8 +24,12 @@ export default function LoginComponent() {
   }, [authState.loggedIn, router]);
 
   useEffect(() => {
-    dispatch(emptyMessage());
-    setLocalError('');
+    const timer = window.setTimeout(() => {
+      dispatch(emptyMessage());
+      setLocalError('');
+    }, 0);
+
+    return () => window.clearTimeout(timer);
   }, [userLoginMethod, dispatch]);
 
   const handleRegister = () => {
