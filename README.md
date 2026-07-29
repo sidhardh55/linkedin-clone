@@ -1,8 +1,8 @@
-# 🚀 LinkedIn Clone - Professional Networking Platform
+# 🚀 Pro Connect - Professional Networking Platform
 
 ## 📖 Project Overview
 
-**LinkedIn Clone** is a full-stack professional networking platform built using **Next.js**, **Node.js**, **Express.js**, and **MongoDB**. The application allows users to build professional profiles, create and interact with posts, connect with professionals, exchange messages, and manage their network through a clean and responsive interface.
+Pro-Connect is a full-stack professional networking platform built using **Next.js**, **Node.js**, **Express.js**, and **MongoDB**. The application allows users to build professional profiles, create and interact with posts, connect with professionals, exchange messages, and manage their network through a clean and responsive interface.
 
 The backend follows the **MVC (Model-View-Controller)** architecture, making the application scalable, maintainable, and easy to extend. The project demonstrates modern full-stack development concepts including authentication, RESTful APIs, Redux state management, image uploads, and database integration.
 
