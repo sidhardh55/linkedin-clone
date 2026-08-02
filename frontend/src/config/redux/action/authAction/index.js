@@ -37,7 +37,9 @@ export const registerUser = createAsyncThunk(
         name: user.name,
       });
 
-      return response.data;
+      return {
+        message: "Account created successfully. Please login now."
+      };
     } catch (err) {
       return thunkAPI.rejectWithValue(
         err.response?.data || { message: err.message || "Failed to register" }

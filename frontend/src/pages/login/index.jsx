@@ -24,6 +24,16 @@ export default function LoginComponent() {
   }, [authState.loggedIn, router]);
 
   useEffect(() => {
+    if (authState.isSuccess && !authState.isError && !userLoginMethod) {
+      setUserLoginMethod(true);
+      setName('');
+      setUsername('');
+      setEmailAddress('');
+      setPassword('');
+    }
+  }, [authState.isSuccess, authState.isError, userLoginMethod]);
+
+  useEffect(() => {
     const timer = window.setTimeout(() => {
       dispatch(emptyMessage());
       setLocalError('');
@@ -50,7 +60,10 @@ export default function LoginComponent() {
     dispatch(loginUser({ email, password }));
   };
 
-  const messageText = localError || (typeof authState.message === 'object' ? authState.message?.message : authState.message);
+  const derivedMessage = typeof authState.message === 'string'
+    ? authState.message
+    : authState.message?.message || '';
+  const messageText = localError || derivedMessage;
 
   return (
     <div className={styles.page}>

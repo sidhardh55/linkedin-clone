@@ -21,6 +21,7 @@ const authSlice = createSlice({
     emptyMessage: (state) => {
       state.message = "";
       state.isError = false;
+      state.isSuccess = false;
     },
     logout: (state) => {
       localStorage.removeItem("token");
